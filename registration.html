@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 450px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2874a6;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 95%;
+            padding: 9px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-top: 10px;
+        }
+
+        /* Gender and Hobbies alignment */
+        .option-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        .option {
+            display: inline-flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 5px;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .option input[type="radio"],
+        .option input[type="checkbox"] {
+            margin: 0;
+            width: auto;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .submit {
+            background-color: #2874a6;
+        }
+
+        .reset {
+            background-color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Registration Form</h2>
+
+    <form action="register.php" method="POST">
+
+        <!-- Text Input -->
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname"
+               placeholder="Enter your full name" required>
+
+        <!-- Email Input -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"
+               placeholder="Enter your email" required>
+
+        <!-- Password Input -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"
+               placeholder="Enter your password" required>
+
+        <!-- Radio Buttons -->
+        <label>Gender:</label>
+
+        <div class="option-group">
+
+            <label class="option" for="male">
+                <input type="radio" id="male" name="gender" value="Male" required>
+                Male
+            </label>
+
+            <label class="option" for="female">
+                <input type="radio" id="female" name="gender" value="Female">
+                Female
+            </label>
+
+            <label class="option" for="other">
+                <input type="radio" id="other" name="gender" value="Other">
+                Other
+            </label>
+
+        </div>
+
+        <!-- Checkboxes -->
+        <label>Hobbies:</label>
+
+        <div class="option-group">
+
+            <label class="option" for="reading">
+                <input type="checkbox" id="reading" name="hobbies[]" value="Reading">
+                Reading
+            </label>
+
+            <label class="option" for="sports">
+                <input type="checkbox" id="sports" name="hobbies[]" value="Sports">
+                Sports
+            </label>
+
+            <label class="option" for="music">
+                <input type="checkbox" id="music" name="hobbies[]" value="Music">
+                Music
+            </label>
+
+        </div>
+
+        <!-- Dropdown Menu -->
+        <label for="country">Select Country:</label>
+        <select id="country" name="country" required>
+            <option value="">--Select Country--</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="India">India</option>
+            <option value="Pakistan">Pakistan</option>
+        </select>
+
+        <!-- Date Input -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <!-- Telephone Input -->
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone"
+               placeholder="Enter phone number" required>
+
+        <!-- Textarea -->
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4"
+                  placeholder="Enter your address"></textarea>
+
+        <!-- Terms and Conditions -->
+        <input type="checkbox" id="terms" name="terms"
+               value="Accepted" required>
+        <label for="terms">I agree to the Terms and Conditions</label>
+
+        <!-- Submit and Reset Buttons -->
+        <button type="submit" class="submit">Submit</button>
+        <button type="reset" class="reset">Reset</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
